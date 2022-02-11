@@ -1,14 +1,15 @@
 fun main(){
-    val userAmount = 150000
+    val userAmount = 170000
     val userAmountForMonth = 76000
-    val cardType = "Mastercard"
+    val cardType = "Visa"
 
-    calculateCommission(cardType, userAmountForMonth, userAmount)
+    val result  = calculateCommission(cardType, userAmountForMonth, userAmount)
+    println("Комиссия составляет: $result")
 }
 
 fun calculateCommission(cardType:String = "Vk Pay",
                         amountForMonth:Int = 0,
-                        amount:Int){
+                        amount:Int):Double{
     var commission = 0.0
     val minCommissionVisaWorld = 3500
     var result = 0.0
@@ -27,6 +28,6 @@ fun calculateCommission(cardType:String = "Vk Pay",
             result = amount * commission
         }
     }
+    return result
 
-   println("Комиссия составляет: $result")
 }
